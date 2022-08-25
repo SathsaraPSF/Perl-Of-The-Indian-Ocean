@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <title>Pearl Of The Indian Ocean</title>
+
+    <style>
+
+       
+
+body{
+    margin: 0;
+    background: linear-gradient(to bottom right, #999600 20%, #99ffcc 84%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1{
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: white;
+  text-shadow: 5px 5px 8px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+ul{
+                margin: 0;
+                list-style-type: none;
+                padding: 4px;
+                background-color:rgb(18, 18, 53);
+                overflow: hidden;
+        
+            }
+        
+            li{
+                float: left;
+        }
+        li a{
+        
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        display: inline-block;
+        padding: 10px 12px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-size: 20px;
+        
+        }
+        
+        li a:hover{
+            text-shadow: 2px 2px 4px yellow;
+        color: rgb(253, 244, 244);
+        
+        }
+        
+        li a.active{
+            color: white;
+          text-shadow: 2px 2px 4px yellow;
+        }
+
+.container{
+    margin-left: 185px;
+    margin-right: 12%;
+    padding: 30px;
+    
+    margin-top: 10%;
+    border-radius: 30px;
+    
+    
+}
+    
+  
+
+.button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  .button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+  }
+  
+  .button2:hover {
+    background-color: #008CBA;
+    color: white;
+  }
+  
+
+
+
+
+ input[type="text" i] {
+    padding: 20px;
+    width: 40%;
+    margin-left: 20%;
+    border-radius: 30px;
+    outline:none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(12, 5, 73);
+    font-size: 25px;
+    font-weight: bold;
+   
+  
+}
+
+tr,td{
+    padding-block: 10px;
+    margin-left: 30px;
+    border-radius: 20px;
+    
+   
+}
+input[type="text" i]:hover{
+    box-shadow: 10px 9px 10px 10px rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ input[type ="submit"]{
+     padding: 20px;
+     border-radius: 30px;
+     width: 20%;
+     border: none;
+     text-transform: uppercase;
+     font-size: 15px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold;
+     font-size: 25px;
+ }
+
+ input[type ="submit"]:hover{
+    box-shadow: 10px 9px 10px 10px rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+
+table{
+
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+ 
+
+}
+tr:hover{
+    background-color: #ddd;
+}
+tr:nth-child(odd){
+    background-color: beige;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Verdana, sans-serif;
+}
+.mySlides{
+    display: none;
+}
+
+img{
+    vertical-align: middle;
+    box-shadow: 10px 9px 10px 10px rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 30px;
+
+}
+.slideshow-container{
+    max-width: 50%;
+    position: relative;
+    margin-top: 60px;
+    margin-left: 375px;
+
+}
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    width:auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(54, 211, 211);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next{
+    right: 0;
+    border-radius: 3px  0 0 3px;
+}
+
+.prev:hover, .next:hover{
+    background-color: rgba(0 ,0, 0,0.8);
+}
+.text{
+    
+    font-size: 55px;
+    padding: 8px 12px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    bottom: 383px;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(248, 248, 248), 0 0 25px rgb(235, 12, 12), 0 0 5px rgb(240, 11, 11);
+}
+a:hover{
+color: white;
+}
+.numbertext{
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top:0;
+}
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin-top: 9px;
+    margin-right: 5px;
+    margin-bottom: -10px;
+    margin-left: 5px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+ .dot:hover{
+    background-color: #f11919;
+
+}
+.fade{
+    -webkit-animation-name: fade;
+    -moz-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+
+}
+@-webkit-keyframes fade{
+    from{opacity: .4}
+    to{opacity: 1}
+}
+
+@keyframes fade{
+    from{opacity: .4}
+    to{opacity: 1}
+}
+
+.footer{
+    padding: 25px;
+    background-color: #fefbd8;
+    
+    
+}
+h3 a{
+    text-decoration: none;
+}
+h3 a:hover{
+    text-decoration: underline;
+    color: rgb(230, 14, 14); 
+}
+
+.topics{
+    margin-left: -7px;
+    margin-top: -235px;
+    
+    
+}
+  .other-detail{
+      text-align: center;
+     
+    }
+
+    .other-detail a{
+        text-decoration: none;
+        font-weight:bold;
+       
+    }
+
+    .other-detail a:hover{
+        text-decoration: underline;
+        color: rgb(230, 14, 14);
+    }
+p a:hover{
+    color: #ff5722;
+
+}
+
+
+ </style>
+
+</head>
+<body>
+ 
+    <div id="navbar">
+        <ul>
+          <li > <a href="Home.html" >Home</a></li>
+          <li><a href ="About us.html">About us</a></li>
+          <li><a href="Where to go.html" class ="active">Where to go</a></li>
+          <li><a href="Tourist news.html">Tourist news</a></li>
+          <li> <a href="Contact us.html">Tourist Info</a></li>
+        </ul>
+    </div>
+
+
+ <div id="app">
+
+        <div class="container">
+
+            <h1>ADD YOUR FAVORITE PLACES HERE</h1>
+
+            <div v-if="!isEditing">
+
+            <input type="text" v-model="todo">
+
+           <input type="submit" value="add" @click="storeTodo">
+
+        </div>
+        <div v-else>
+
+            <input type="text" v-model="todo">
+            <input type="submit" value="add" @click="updateTodo">
+
+
+        </div>
+
+            <br>
+            <br>
+            <br>
+            <table >
+
+                <tr v-for="(todo, index) in todos">
+                  
+                    <td style="width: 70%; "> &nbsp;&nbsp;&nbsp;&nbsp;  {{ todo }}</td>
+                   
+                    <td style="width: 60%;">&nbsp;&nbsp;&nbsp; <button class="button button2" @click="editTodo(index, todo)">Edit</button>
+                         <button class="button button2" @click="deleteTodo(index)">Delete</button> &nbsp;&nbsp;&nbsp;
+                   </td>
+
+                </tr>  
+
+                </table>
+        </div>
+
+    </div>
+
+
+    <div class = " slideshow-container">
+        <div class = "mySlides fade">
+            <div class ="numbertext"> 1/6</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Summer_in_Kandy.jpg/1280px-Summer_in_Kandy.jpg" style="width: 100%;">
+            <div class="text"> <a style="text-decoration: none;text-transform: uppercase;" href= "https://www.google.com/travel/things-to-do?dest_src=ut&tcfs=CiMKCS9tLzA3MDJsahoWRGVoaXdhbGEtTW91bnQgTGF2aW5pYRI3CgkvbS8wMzJyNjMSEENlbnRyYWwgUHJvdmluY2UaGAoKMjAyMi0wMS0xORIKMjAyMi0wMS0yM1ICYAE&dest_mid=%2Fm%2F032r63&ved=2ahUKEwit1-GGr5X1AhUNi9gFHfNTDjEQyJABegQIABAV&ictx=3&hl=en-LK&gl=lk&g2lb=4679296%2C4258168%2C4596364%2C4597339%2C4419364%2C4371335%2C4317915%2C4270442%2C4640247%2C4649665%2C4306835%2C4624411%2C4401769%2C2503771%2C4689876%2C2502548%2C2503
+                781%2C4605861%2C4641139%2C4270859%2C4291517%2C4284970#ttdm=7.311390_80.709064_9&ttdmf=%252Fm%252F03cp0rh">Central Province </a> </div>
+        </div>
+        <div class = "mySlides fade">
+            <div class ="numbertext"> 2/6</div>
+            <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Sunset_Over_Lagoon2.jpg/1200px-Sunset_Over_Lagoon2.jpg" style="width: 100%;">
+            <div class="text"> <a style="text-decoration: none; text-transform: uppercase;" href= "https://www.google.com/travel/things-to-do?dest_src=ut&tcfs=CiMKCS9tLzA3MDJsahoWRGVoaXdhbGEtTW91bnQgTGF2aW5pYRIjCgkvbS8wNzJfenMSFk5vcnRoIENlbnRyYWwgUHJ
+                vdmluY2VSAmAB&dest_mid=%2Fm%2F072_zs&ved=2ahUKEwit1-GGr5X1AhUNi9gFHfNTDjEQyJABegQIABAV&ictx=3&hl=en-LK&gl=lk&g2lb=4679296%2C4258168%2C4596364%2C4597339%2C4419364%2C4371335%2C4317915%2C4270442%2C4640247%2C4649665%2C4306835%2C4624411%2C4401769%2C2503771%2C4689876%2C2502548%2C2503781%2C4605861%2C4641139%2C4270859%2C4291517%2C4284970&dest_state_type=main#ttdm=8.032588_80.697601_9&ttdmf=%252Fm%252F09ry5gs">North Province </a></div>
+        </div>
+        <div class = "mySlides fade">
+            <div class ="numbertext"> 3/6</div>
+            <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Colombo_City%2C_Sri_Lanka.jpg/1280px-Colombo_City%2C_Sri_Lanka.jpg" style="width: 100%;">
+            <div class="text"> <a style="text-decoration: none; text-transform: uppercase;" href= "https://www.google.com/travel/things-to-do?dest_src=ut&tcfs=CiMKCS9tLzA3MDJsahoWRGVoaXdhbGEtTW91bnQgTGF2aW5pYRIdCgkvbS8wMW14ZjcSEFdlc3Rlcm4gUHJvdmluY2VSAmAB&dest_mid=%2Fm%2F01mxf7&ved=2ahUKEwit1-GGr5X1AhUNi9gFHfNTDjEQyJABegQIABAV&ictx=3&hl=en-LK&gl=lk&g2lb=4679296%2C4258168%2C4596364%2C4597339%2C4419364%2C4371335%2C4317915%2C4270442%2C4640247%2C4649665%2C4306835%2C4624411%2C4401769%2C2503771%2C4689876%2C2502548%2
+                C2503781%2C4605861%2C4641139%2C4270859%2C4291517%2C4284970&dest_state_type=main#ttdm=6.887167_79.881550_12">Westurn Province </a></div>
+        </div>
+        <div class = "mySlides fade">
+            <div class ="numbertext"> 4/6</div>
+            <img src ="https://www.bluelankatours.com/wp-content/uploads/2019/05/galle-1002--e1558505902223-768x768.jpg" style="width: 100%;">
+            <div class="text"><a style="text-decoration: none; text-transform: uppercase;" href= "https://www.google.com/travel/things-to-do?dest_src=ut&tcfs=CiMKCS9tLzA3MDJsahoWRGVoaXdhbGEtTW91bnQgTGF2aW5pYRIdCgkvbS8wMW14ZjcSEFdlc3Rlcm4gUHJvdmluY2VSAmAB&dest_mid=%2Fm%2F01mxf7&ved=2ahUKEwit1-GGr5X1AhUNi9gFHfNTDjEQyJABegQIABAV&ictx=3&hl=en-LK&gl=lk&g2lb=4679296%2C4258168%2C4596364%2C4597339%2C4419364%2C4371335%2C4317915%2C4270442%2C4640247%2C4649665%2C4306835%2C4624411%2C4401769%2C2503771%2C4689876%2C2502548%2
+                C2503781%2C4605861%2C4641139%2C4270859%2C4291517%2C4284970&dest_state_type=main#ttdm=6.887167_79.881550_12">Southern Province </a></div>
+        </div>
+
+        <div class = "mySlides fade">
+            <div class ="numbertext"> 5/6</div>
+            <img src ="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/e0/8d/c6.jpg" style="width: 100%;">
+            <div class="text"><a style="text-decoration: none; text-transform: uppercase;" href= "https://www.google.com/travel/things-to-do?dest_src=ut&tcfs=CiMKCS9tLzA3MDJsahoWRGVoaXdhbGEtTW91bnQgTGF2aW5pYRIjCgkvbS8wNzJfenMSFk5vcnRoIENlbnRyYWwgUHJvdmluY2VSAmAB&dest_mid=%2Fm%2F072_zs&ved=2ahUKEwit1-GGr5X1AhUNi9gFHfNTDjEQyJABegQIABAV&ictx=3&hl=en-LK&gl=lk&g2lb=4679296%2C4258168%2C4596364%2C4597339%2C4419364%2C4371335%2C4317915%2C4270442%2C4640247%2C4649665%2C4306835%2C4624411%2C4401769%2C2503771%2C4689876%2C2502548%2C2503781%2C4605861%2C4641
+                139%2C4270859%2C4291517%2C4284970&dest_state_type=main#ttdm=8.032588_80.697601_9&ttdmf=%252Fm%252F0f3s_b">North Central Province </a></div>
+        </div>
+
+        <div class = "mySlides fade">
+            <div class ="numbertext"> 6/6</div>
+            <img src ="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/2a/12/33/entrance-gate-to-the.jpg?w=700&h=-1&s=1" style="width: 100%;">
+            <div class="text"><a style="text-decoration: none;" href= "https://www.google.com/travel/things-to-do?dest_src=ut&tcfs=CiMKCS9tLzA3MDJsahoWRGVoaXdhbGEtTW91bnQgTGF2aW5pYRIjCgkvbS8wNzJfeHgSFk5vcnRoIFdlc3Rlcm4gUHJvdmluY2VSAmAB&dest_mid=%2Fm%2F072_xx&ved=2ahUKEwit1-GGr5X1AhUNi9gFHfNTDjEQyJABegQIABAV&ictx=3&hl=en-LK&gl=lk&g2lb=4679296%2C4258168%2C4596364%2C4597339%2C4419364%2C4371335%2C4317915%2C4270442%2C4640247%2C4649665%2C4306835%2C4624411%2C4401769%2C2503771%2C4689876%2C2502548%2C2503781%2C4605861%2C4641139%2C4
+                270859%2C4291517%2C4284970&dest_state_type=main#ttdm=7.856511_80.102743_9&ttdmf=%252Fg%252F1v5fqb1w">North westurn Province </a></div>
+        </div>
+ 
+ 
+         <a class ="prev" onclick ="plusSlides(-1)"> &#10094;</a>
+         <a class ="next" onclick ="plusSlides(1)"> &#10095;</a>
+
+    </div>
+
+    <br>
+    
+    <div style ="text-align: center;">
+    <span class ="dot" onclick="currentSlides(1)"></span>
+    <span class ="dot" onclick="currentSlides(2)"></span>
+    <span class ="dot" onclick="currentSlides(3)"></span>
+    <span class ="dot" onclick="currentSlides(4)"></span>
+    <span class ="dot" onclick="currentSlides(5)"></span>
+    <span class ="dot" onclick="currentSlides(6)"></span>
+    
+    </div>
+
+    <br>
+    <br>
+    <div class ="footer">
+
+        <footer>
+        <div class = "other-detail">
+            <h2>Other sites</h2>
+           <a href="https://www.sltda.gov.lk/en">Sri lanaka Tourism Development Authority </a>
+           <br>
+           <br>
+           <a href="https://www.tourismmin.gov.lk/">Ministry Of Tourism</a>
+           <br>
+           <br>
+           <a href="https://www.srilankan.com/en_uk/lk">Sri Lanka Air Lines</a>
+           <br>
+           <br>
+           <a href="https://immigration.gov.lk/">Department Of Imigration and Imigration</a>
+           <br>
+           <br>
+           <a href="https://www.thasl.lk/">Tourist Hotels Association Of Sri Lanka</a>
+        </div>
+    
+        
+    
+    <hr>
+    
+    <div  style="text-align: center ;">
+     &copy;2021 &nbsp;&nbsp;  Peral Of the Indian Ocean  &nbsp;&nbsp; All Rights Reserved.
+    </div>
+    </footer>
+    </div>
+    
+
+
+   
+   <script src="script.js"></script>
+      
+</body>
+</html>
